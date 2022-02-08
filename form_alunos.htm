@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function testa_form(){      
+            var n = document.forms["formalunos"]["nome_aluno"].value;
+            var m = document.forms["formalunos"]["matricula"].value;
+            
+            if (m==null || m=="") {
+                alert("Número de matrícula precisa ser informado");
+                return false;
+            }
+            if (n==null || n=="") {
+                alert("O nome precisa ser informado");
+                return false;
+            }
+          
+        }
+        function testa_senha(){
+            var s = document.forms["formalunos"]["senha"].value;
+            var sc = document.forms["formalunos"]["senha_conf"].value;
+            alert(s + "=" + sc + "?");
+            if (s != sc){
+                document.getElementById("aviso").innerHTML="senhas diferentes";
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Sistema Acadêmico</h1>
+    <form name="formalunos" action="" onsubmit="return testa_form()"  method="post">
+        Matrícula: <input type="text" name="matricula">
+        <br>
+        Nome: <input type="text" name="nome_aluno">
+        <br>
+        Senha: <input type="password" name="senha">
+        <br>
+        Confirma senha: <input type="password" name="senha_conf">
+        <br>
+        <input type="submit" value="Submit" onclick="testa_senha()">
+    </form>
+    <p id="aviso"></p>
+</body>
+</html>

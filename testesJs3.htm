@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function justifica_falta(form){
+            var jf = confirm("Justifica falta " + form.nome_aluno.value + "?");
+            if(jf == true)
+                var texto_jf = prompt("Digite a justificativa apresentada");
+            else
+                alert("Falta não justificada");
+        }
+    </script>
+</head>
+<body>
+    <h1>Sistema Acadêmico - Justificativa de Falta</h1>
+    <form name="my_form" method="GET" action="">
+        Matrícula: <input type="text" name="matricula">
+        <br>
+        Nome: <input type="text" name="nome_aluno">
+        <br>
+        <input type="button" name="btn_jf" value="Justificar Falta" onclick="justifica_falta(this.form)">
+    </form> 
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc JavaScript</title>
+    <script>
+        function somar(n1, n2){
+            var res = parseFloat(n1) + parseFloat(n2);
+            return res;
+        }
+        function subtraer(n1, n2){
+            var res = parseFloat(n1) - parseFloat(n2);
+            return res;
+        }
+        function multiplicar(n1, n2){
+            var res = parseFloat(n1) * parseFloat(n2);
+            return res;
+        }
+        function dividir(n1, n2){
+            var res = parseFloat(n1) / parseFloat(n2);
+            return res;
+        }
+        function resultado(){
+           
+            var n1 = document.forms["calc"]["n1"].value;
+            var n2 = document.forms["calc"]["n2"].value;
+            var op = document.forms["calc"]["operacao"].value;
+            var res;
+            switch(op){
+                case "+":
+                    res=somar(n1,n2);
+                    break;
+                case "-":
+                    res=subtraer(n1,n2);
+                    break;
+                case "*":
+                    res=multiplicar(n1,n2);
+                    break;
+
+                case "/":
+                    res=dividir(n1,n2);
+                    break;
+                default:
+                    alert("Operação invalida");
+            }
+            
+            document.getElementById("resultado").innerHTML = res;
+            return false;
+           
+        }
+
+    
+    </script>
+</head>
+<body>
+    <h3>Calculadora</h3>
+    <form name ="calc" action="" method="" >
+        <input type="number" name="n1">
+        <br>
+        <select name="operacao">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <br>
+        <input type="number" name="n2">
+        <br>
+        <input type="button" value="Resultado" onclick="resultado()">
+   </form> 
+   <h5>Resultado: </h5>
+   <p id="resultado"></p>
+</body>
+
+</html>

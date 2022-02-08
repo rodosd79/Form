@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calcMedia (n1,n2) {
+            var med = (n1+n2)/2;
+            alert(n1 + "e" + n2);
+            return med;
+        }
+        function resultado(form){
+            var media = calcMedia(parseFloat(form.n1.value),parseFloat(form.n2.value));
+            if(media>=7){
+                alert("Aprovado, nota: " + media);
+            }
+            else{
+                alert("Reprovado, nota: " + media)
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Sistema Acadêmico</h1>
+    <form name="myform" action="" method="get">
+        <label>Matrícula: <input type="text" name="matricula"></label>
+        <br>
+        <label>Nome: <input type="text" name="nome"></label>
+        <br>
+        <label>Data nascimento: <input type="date" name="nasc"></label>
+        <br>
+        <label>Sexo: <br>
+            <input type="radio" name="sexo" value="masculino">Masculino<br>
+            <input type="radio" name="sexo" value="feminino"></label>Feminino<br>
+        <br>
+        <label>Nota 1: <input type="text" name="n1"></label>
+        <br>
+        <label>Nota 2: <input type="text" name="n2"></label>
+        <br>
+        <button type="button" name="button" value="Calcular Média" onclick="resultado(this.form)">Ver resultado</button>
+    </form> 
+    <script>
+
+    </script>   
+</body>
+</html>  
